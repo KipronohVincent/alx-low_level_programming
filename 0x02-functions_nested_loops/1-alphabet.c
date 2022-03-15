@@ -1,17 +1,21 @@
 #include "main.h"
-/*
- * main - print alphabet a-z
- * Return - Always 0
+
+/**
+ * print_alphabet 
+ *
+ * Return: Always 0.
  */
+
 void print_alphabet(void)
 {
+	char alp = 'a';
 
-        char x;
+	while (alp <= 'z')
+	{
+		_putchar (alp);
+		alp++;
 
-        for ( x = 'a'; x < = 'z'; x++)
-        {
-                _putchar('x');
-                _putchar('\n');
-        }
-        return 0;
+	}
+	_putchar ('\n');
+
 }
