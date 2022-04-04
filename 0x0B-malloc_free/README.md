@@ -53,7 +53,7 @@ if NULL is passed, treat it as an empty string
 - Returns a pointer to a new string, or NULL if it fails
 - Each argument should be followed by a \n in the new string  
 
-#### [6. I will show you how great I am] (101-strtow.c)
+#### [6. I will show you how great I am](101-strtow.c)
 
 - Write a function that splits a string into words.
 
