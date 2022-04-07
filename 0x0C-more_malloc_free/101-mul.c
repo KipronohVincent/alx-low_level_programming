@@ -1,9 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
 #define ERR_MSG "Error"
-
-int _isdigit(char *s);
 
 /**
  * main - takes two numbers as arguments and outputs the product.
