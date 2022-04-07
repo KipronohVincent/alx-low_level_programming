@@ -1,158 +1,99 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
 
 /**
- * main - program that multiplies two positive numbers
+ * is_digit - checks if a string contains a non-digit char
+ * @s: string to be evaluated
  *
- * @argc: argument count, must be 3
- * @argv: arguments, argv[1] and argv[2]
- *
- * Return: product of argv[1] by argv[2]
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-
-int main(int argc, char *argv[])
+int is_digit(char *s)
 {
-	char *num1, *num2;
-	int i, j, k, len1, len2, len, d1, d2, d1d2, carry, *mul;
+	int i = 0;
 
-	if (argc != 3 || !(_isnumber(argv[1])) || !(_isnumber(argv[2])))
-		_error(), exit(98);
-	num1 = argv[1], num2 = argv[2];
-	len1 = _strlen(num1), len2 = _strlen(num2), len = len1 + len2;
-	mul = _calloc(len, sizeof(int));
-	if (mul == NULL)
-		exit(98);
-	for (i = len1 - 1; i >= 0; i--)
+	while (s[i])
 	{
-		d1 = num1[i] - '0';
-		carry = 0;
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			d2 = num2[j] - '0';
-			d1d2 = d1 * d2;
-			mul[i + j + 1] += d1d2 % 10;
-			carry = d1d2 / 10;
-			if (mul[i + j + 1] > 9)
-			{
-				mul[i + j] += mul[i + j + 1] / 10;
-				mul[i + j + 1] = mul[i + j + 1] % 10;
-			}
-			mul[i + j] += carry;
-		}
-	}
-	for (k = 0; mul[k] == 0 && k < len; k++)
-		;
-	if (k == len)
-		_putchar(mul[len - 1] + '0');
-	else
-	{
-		for (i = k; i < len; i++)
-			_putchar(mul[i] + '0');
-	}
-	_putchar('\n');
-	free(mul);
-	return (0);
-}
-
-/**
- * _isnumber - checks for digit-only (0 through 9) numbers
- *
- * @str: parameter hard-coded in main
- *
- * Return: 1 or 0
- */
-
-int _isnumber(char *str)
-{
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] < '0' || str[i] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (0);
+		i++;
 	}
 	return (1);
 }
 
 /**
- * _error - print error
- * Return: void
- */
-
-void _error(void)
-{
-	int i;
-	char error[] = "Error";
-
-	for (i = 0; i < 5; i++)
-		_putchar(error[i]);
-	_putchar('\n');
-}
-
-/**
- * _strlen - function that returns the length of a string
+ * _strlen - returns the length of a string
+ * @s: string to evaluate
  *
- * @s: parameter defined in main
- *
- * Return: length of string
+ * Return: the length of the string
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
 
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
-		s++;
 	}
 	return (i);
 }
 
 /**
- * _calloc - function that allocates memory for an array, using malloc
- * @nmemb: size of the memory space to allocate in bytes
- * @size: size of type
- * Return: void pointer
+ * errors - handles errors for main
  */
-
-void *_calloc(unsigned int nmemb, unsigned int size)
+void errors(void)
 {
-	void *ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-	_memset(ptr, 0, size * nmemb);
-	return (ptr);
+	printf("Error\n");
+	exit(98);
 }
 
 /**
- * _memset - function that fills memory with a constant byte
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * @s: parameter defined in main, pointer to memory area
- * @b: parameter defined in main, constant byte
- * @n: parameter defined in main, number of bytes to be filled
- *
- * Return: memory address of function (memory area)
+ * Return: always 0 (Success)
  */
-
-char *_memset(char *s, char b, unsigned int n)
+int main(int argc, char *argv[])
 {
-	unsigned int i;
-	char *tmp = s;
+	char *s1, *s2;
+	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
-	for (i = 0; i < n; i++)
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
+	if (!result)
+		return (1);
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		*s = b;
-		s++;
+		digit1 = s1[len1] - '0';
+		carry = 0;
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
+		{
+			digit2 = s2[len2] - '0';
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
+			carry /= 10;
+		}
+		if (carry > 0)
+			result[len1 + len2 + 1] += carry;
 	}
-	s = tmp;
-	return (s);
+	for (i = 0; i < len - 1; i++)
+	{
+		if (result[i])
+			a = 1;
+		if (a)
+			_putchar(result[i] + '0');
+	}
+	if (!a)
+		_putchar('0');
+	_putchar('\n');
+	free(result);
+	return (0);
 }
