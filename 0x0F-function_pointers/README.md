@@ -76,7 +76,7 @@ and action is a pointer to the function you need to use.
 	- If s does not match any of the 5 expected operators (+, -, *, /, %), return NULL
 	- You are only allowed to declare these two variables in this function:
 
-#### 3-main.c
+#### [3-main.c](3-main.c)
 
 - This file should contain your main function only.
 
