@@ -1,8 +1,6 @@
 # [C - Singly linked lists](0x12-singly_linked_lists)
 
-
-## Tests :heavy_check_mark:
-
+---- 
 
 ## Header File :file_folder:
 
