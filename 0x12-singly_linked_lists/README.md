@@ -1,6 +1,9 @@
 # [C - Singly linked lists](0x12-singly_linked_lists)
 
----- 
+----
+## Tests :heavy_check_mark:
+
+* [Tests](./tests): This Directory is for tests purposes. 
 
 ## Header File :file_folder:
 
