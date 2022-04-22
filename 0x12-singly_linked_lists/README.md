@@ -59,5 +59,4 @@ types and functions written for the project.
 ----
 
 ## AUTHOR:
----
 ## [KIPRONOH VINCENT](https://github.com/KipronohVincent)
