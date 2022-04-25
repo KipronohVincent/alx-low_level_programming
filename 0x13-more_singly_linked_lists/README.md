@@ -3,7 +3,7 @@
 
 ## Tests :heavy_check_mark:
 
-* [tests](./test): Directory to the Tests. 
+* [test](./test): Directory to the Tests. 
 
 
 * [lists.h](./lists.h): `lists.h` file contains `prototypes` to the functions.
