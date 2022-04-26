@@ -28,8 +28,4 @@
   <img src="https://lh3.googleusercontent.com/vH1HTHhq7BIEuhIDuEc2Wrc2LgZigsJEWDR56ALuDFRZv9-jqCgHNHuBHIB-fLrrbwp7tJ8b7qeIJo0VtHUh=s0" alt="ALX logo">
 </div>
 
-<div align="center>
-	<img data-src="https://res.cloudinary.com/christekh/image/upload/w_auto,c_scale/v1501761946/pexels-photo-457044_etqwsd.jpg" alt="" class="cld-responsive">
-
-</div>
 
