@@ -3,15 +3,15 @@
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of test files. 
-
-## Helper File :raised_hands:
+* [tests](./tests): Folder of test files
 
 ----
 
 ## Header File
 
 * [main.h](./main.h): The Prototypes
+
+## The table below illustrates files and it's corresponing prototype.
 
 | File                   | Prototype                                                           |
 | ---------------------- | ------------------------------------------------------------------- |
