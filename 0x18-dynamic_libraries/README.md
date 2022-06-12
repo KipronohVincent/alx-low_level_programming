@@ -39,7 +39,7 @@ Making use of; creation of new libraries `gcc -Wall -fPIC -c *.c`, creating posi
 * **2. Let's call C functions from Python**
   * [100-operations.so](./100-operations.so): C dynamic library containing basic C
   mathematical operation functions that can be called from Python.
-  * Includes:
+  * Includes:[operand.c](./operand.c)
     * `int add(int a, int b);`
     * `int sub(int a, int b);`
     * `int mul(int a, int b);`
