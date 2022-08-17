@@ -35,14 +35,14 @@ Used for Makefile practice purposes throughout project.
     * The `all` rule only recompiles updated source files.
 
 * **2. make -f 2-Makefile**
-  * [2-Makefile](./2-Makefile): Makefile that creates an executable `holberton` based on
+  * [2-Makefile](./2-Makefile): Makefile that creates an executable `school` based on
   [school.c](school.c) and [main.c](./main.c). Builds on [1-Makefile](./1-Makefile)
   with:
     * Variable `OBJ` that defines the `.o` files to compile.
     * Variable `NAME` that defines the name of the executable.
 
 * **3. make -f 3-Makefile**
-  * [3-Makefile](./3-Makefile): Makefile that creates an executable `holberton` based on
+  * [3-Makefile](./3-Makefile): Makefile that creates an executable `school` based on
   [school.c](./school.c) and [main.c](./main.c). Builds on [2-Makefile](./2-Makefile)
   with:
     * Rule `clean` that deletes all Emacs/Vim temporary files as well as the
