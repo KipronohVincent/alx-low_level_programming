@@ -4,7 +4,7 @@ In this project, I practiced writing Makefiles.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of test files. Provided by Holberton School.
+* [tests](./tests): Folder of test files. 
 
 ## Helper Files :raised_hands:
 
@@ -22,8 +22,8 @@ Used for Makefile practice purposes throughout project.
 ## Tasks :page_with_curl:
 
 * **0. make -f 0-Makefile**
-  * [0-Makefile](./0-Makefile): Makefile that creates an executable `holberton` based on
-  [holberton.c](./holberton.c) and [main.c](./main.c). Includes:
+  * [0-Makefile](./0-Makefile): Makefile that creates an executable `school` based on
+  [school.c](./school.c) and [main.c](./main.c). Includes:
     * Rule `all` that builds the executable.
 
 * **1. make -f 1-Makefile**
